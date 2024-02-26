@@ -3,7 +3,17 @@ const router = express.Router();
 const skillsCtrl = require('../controllers/skills');
 
 router.get('/', skillsCtrl.index);
+//GET /skills/new <-- define before show route
+router.get('/new', skillsCtrl.new);
+//GET /Skills/:id
 router.get('/:id', skillsCtrl.show);
+//POST Skills
+router.post('/', skillsCtrl.create);
+// DELETE / skills/ id:
+router.delete('/:id', skillsCtrl.delete);
+
+
+
 
 module.exports = router;
 
@@ -27,5 +37,3 @@ module.exports = router;
  // Require the controller that exports To-Do CRUD functions
 
  // All actual paths begin with "/skills"
-
- // GET /skills
