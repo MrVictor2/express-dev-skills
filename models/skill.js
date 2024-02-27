@@ -1,5 +1,5 @@
 const skills = [
-  {id: 1001, skill: 'Visual Studio Code', experiene: '5 years'},
+  {id: 1001, skill: 'Visual Studio Code', experience: '5 years'},
   {id: 1002, skill: 'React', experience: '3 years'},
   {id: 1003, skill: 'AI expert', experience: '2 years'},
   {id: 1004, skill: 'Node.js', experience: '5 years'},
@@ -9,6 +9,10 @@ const skills = [
  
 function create(skill) {
   skill.id = Date.now() % 1000000;
+  //add a line to to make the new skill show up
+  //<----add code line here ---->
+  skills.push(skill);
+
 }
  function getAll() {
    return skills;
@@ -24,9 +28,16 @@ function create(skill) {
   const idx = skills.findIndex(skill => skill.id === id);
   skills.splice(idx, 1)
  }
+
+ function update(id, updatedSkill) {
+  id= parseInt(id);
+  const skill = skill.find(skill => skill.id === id);
+  skill.skill = updatedSkill.skill;
+ }
 module.exports = {
    getAll,
    getOne,
    create,
-   deleteSkill
+   deleteSkill,
+   update
  };

@@ -1,8 +1,11 @@
-<%- includes('../partials/header') %>
+<%- include('../partials/header') %>
 
     <h3><%= skill.skill %></h3>
     <h3>Years of experience: <%= skill.experience %></h3>
     <a href="/skills">Back to skills</a>
+    <br><br>
+    <a href="/skills/<%= skill.id %>/edit">Edit skill</a>
     
-    <%- includes('../partials/footer') %>
+    
+    <%- include('../partials/footer') %>
   
